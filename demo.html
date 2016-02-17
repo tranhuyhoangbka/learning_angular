@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <title>AngularJS tutorials</title>
+</head>
+<body>
+
+<div ng-app="myApp" ng-init="firstName='John'" ng-controller="myCtrl">
+  <p>Name: <input type="text" ng-model="name"></p>
+  <h1>Hello {{name}}</h1>
+  <p ng-bind="name"></p>
+  <p>The name is <span ng-bind="firstName"></span></p>
+  <p>my expression: {{5 + 5}}</p>
+  <p><textarea ng-model="desc"></textarea></p>
+  <p>description: {{desc}}</p>
+
+  First Name: <input type="text" ng-model="firstname"><br>
+  Last Name: <input type="text" ng-model="lastname"><br>
+  Full Name: {{firstname + " " + lastname}}
+  <br>
+</div>
+
+<script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope){
+    $scope.firstname = "John";
+    $scope.lastname = "Doe";
+  });
+</script>
+</body>
+</html>
